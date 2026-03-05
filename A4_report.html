@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 4</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 4</small>
+			Persuasive or Deceptive Visualization?
+		</h1>
+
+		<p>
+			<strong>Summer Zhou</strong> - <em>xzhou27@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+    <h2>Proposition: Countries where population is concentrated in one dominant city have higher slum rates.</h2>
+
+		<p>
+			Urban primacy refers to how much of a country's urban population lives in its single largest city. A high-primacy country funnels most of its urban residents into one metropolis, a low-primacy country spreads them across several cities. This proposition claims that concentrating people in a single dominant city strains housing, infrastructure, and services to the point that informal settlements - slums - become more prevalent. On its face, the idea is intuitive: a city that absorbs a disproportionate share of national growth may not build formal housing fast enough to keep up. Yet it is also contestable: many high-primacy countries are small or middle-income nations that have invested heavily in their capital, while some low-primacy countries with distributed urban networks (e.g., Nigeria, Ethiopia) still have very high slum rates driven by poverty rather than city structure.
+		I chose this proposition because the World Bank urban-development dataset contains both indicators with strong 2018 coverage (108 countries), and the underlying relationship is genuinely ambiguous (r = 0.20), making it an ideal case for studying how visual framing can tilt interpretation.
+		</p>
+
+		<section>
+      <h3>FOR the Proposition</h3>
+
+			<p>
+				This visualization argues that urban primacy is meaningfully linked to higher slum rates. It pairs a cross-sectional scatterplot with a tercile bar summary to make a positive-slope relationship feel both statistically grounded and intuitively clear. The chart highlights specific high-primacy, high-slum countries by name to anchor the reader's memory to concrete examples.
+			</p>
+
+      <figure>
+				<img src="viz_urban_slums_pro.png" alt="Two-panel figure: scatterplot of primacy vs slum rate with trend line, plus tercile bar chart showing rising mean slum share with higher primacy." />
+				<figcaption>
+					Left: Each dot is a country in 2018. The fitted line shows a positive association between urban primacy and slum prevalence. Right: Countries sorted into thirds by primacy level, mean slum share rises from 28% in the lowest third to 44% in the highest third.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li><strong>Decision 1 - Scatter with trend line and reported r-value (Score: +1.5, mostly earnest)</strong> Showing all 108 data points alongside a fitted line lets readers see spread and outliers while still perceiving an upward slope. I report the correlation coefficient directly on the chart. This is transparent, but the visual weight of the red line can make the relationship feel stronger than r = 0.20 actually is. I considered omitting the line, but that made the argument too weak, I also considered a smoothed curve, but a straight line is simpler and harder to accuse of overfitting.</li>
+				<li><strong>Decision 2 - Tercile bar chart side panel (Score: +0.5, slightly earnest)</strong> I sorted all 108 countries by primacy and split them into equal thirds: low primacy (3%–25% of urban population in the largest city, 36 countries), mid primacy (25%–37%, 36 countries), and high primacy (37%–75%, 36 countries). I then plotted each group's mean slum share as a bar, producing a clean staircase (28% → 38% → 44%). This binning compresses within-group variability and makes the upward progression feel smooth and inevitable. I considered a box plot (which would honestly show the wide spread inside each bin) but chose bars because they are more rhetorically clean and easier to read at a glance.</li>
+				<li><strong>Decision 3 - Selective annotation of high-primacy, high-slum countries (Score: -0.5, slightly deceptive)</strong> I labeled countries like Central African Republic, Guinea-Bissau, Mauritania, and Afghanistan - all cases where high primacy coincides with extreme slum rates. This steers the reader toward vivid examples that support the proposition while leaving counterexamples (e.g., Paraguay, Chile, Trinidad) unlabeled and invisible. I considered balanced annotations but concluded they would dilute the persuasive message.</li>
+				<li><strong>Decision 4 - Assertive title framing (Score: -0.5, slightly deceptive)</strong> The title says "Higher Urban Primacy Is Linked to Greater Slum Prevalence," which implies a meaningful causal-adjacent relationship. With r = 0.20, the word "linked" slightly overstates the statistical strength. A more neutral title like "Primacy and Slum Rates in 2018" would be fairer but far less persuasive.</li>
+			</ul>
+    </section>
+
+    <section>
+      <h3>AGAINST the Proposition</h3>
+
+			<p>
+				This visualization argues that urban primacy tells you almost nothing about a country's slum rate. Instead of a conventional scatterplot, it uses two unconventional forms: a dumbbell chart that pairs countries with nearly identical primacy but wildly different slum outcomes, and a strip/jitter plot showing that slum-rate distributions for high-primacy and low-primacy countries overlap almost completely. Together, these panels make the visual case that knowing a country's primacy level gives you no reliable information about its slum conditions.
+			</p>
+
+      <figure>
+				<img src="viz_urban_slums_con.png" alt="Two-panel figure: dumbbell chart pairing countries with similar primacy but vastly different slum rates, plus strip plot showing overlapping slum-rate distributions for high vs low primacy groups." />
+				<figcaption>
+					Left: Each row pairs two countries with similar urban primacy (within ~8 percentage points) but slum-rate gaps of 50–66 points. Blue dots are low-slum countries, red dots are high-slum countries. Right: All 108 countries split at the median primacy value, showing that both groups span nearly the entire 0–95% slum range.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li><strong>Decision 1 - Dumbbell chart pairing countries by similar primacy (Score: -1.0, moderately deceptive)</strong> I matched countries that have nearly the same urban primacy (within 8 percentage points) but dramatically different slum rates, then displayed the top 8 most extreme pairs. This transformation makes the proposition look unlikely: how can primacy reliably predict slums if Portugal (44% primacy, 4% slum) and Haiti (43% primacy, 66% slum) sit at the same primacy level? The deceptive element is that I specifically selected pairs that maximize the gap - there are also pairs with similar primacy and similar slum rates, which I excluded. I considered showing all possible pairs, but the visual would have been cluttered and the argument diluted.</li>
+				<li><strong>Decision 2 - Labeling both countries in each pair with slum percentages (Score: +1.0, mostly earnest)</strong> Every dot is labeled with the country name and its slum rate, so the reader can verify the claims. This transparency makes the chart feel credible and data-grounded rather than vague.</li>
+				<li><strong>Decision 3 - Splitting into only two groups (low and high primacy) instead of three terciles (Score: -0.5, slightly deceptive)</strong> In the side panel, I split countries into just two groups at the median primacy rather than using three terciles (low, mid, high) as the pro chart does. Using two groups instead of three hides the staircase progression that three bins would reveal, and makes the two distributions look more similar to each other. With three bins, the reader would see a gradual rise in mean slum share that supports the proposition, with two bins, the visual story is simply "these two groups overlap," which undermines it. I considered matching the pro chart's three-bin approach for consistency, but the two-group split is more persuasive for the counter-argument.</li>
+				<li><strong>Decision 4 - Using a strip/jitter plot instead of a bar chart of means (Score: +0.5, slightly selective)</strong> I deliberately chose a strip plot over a bar chart of group means (like the tercile bars in the pro visualization). A bar chart showing only mean values would make the ~12-point difference between the two groups look starker and more meaningful. By displaying every individual country as a dot, the reader sees that the overall distribution shape of the two groups looks quite similar - both span nearly the full 0–95% range. This reinforces the "no real difference" argument far more effectively than summary statistics alone, because the visual weight of overlapping dots overwhelms the modest gap between the two group means.</li>
+			</ul>
+    </section>
+
+    <section>
+      <h2>Final Reflection</h2>
+
+      <p>
+				One of the biggest lessons from this assignment is that even the smallest design choices - choices that feel purely technical - can fundamentally shift what a reader takes away. Showing three tercile bars versus two group columns changes whether the reader perceives a gradient or sees no difference. Using a bar chart of means versus a strip plot of individual dots changes whether a 12-point gap feels significant or trivial. Labeling certain countries while leaving others unnamed changes which stories stick in the reader's memory. None of these decisions involve fabricating or even transforming the underlying numbers, yet each one nudges the interpretation from one side of the proposition to the other. Before this exercise, I assumed that the most powerful way to mislead with a chart was through dramatic axis manipulation or outright distortion. What I found instead is that the easiest and most effective way to sway a reader's interpretation is simply to use selective data rather than representing the entire population - whether that means cherry-picking country pairs for a dumbbell chart, choosing which countries get labeled, or deciding how many bins to split the data into.
+			</p>
+
+			<p>
+				I now define ethical visualization to be persuasion that preserves the reader's ability to recover what was left out. The pro chart's tercile bars compress within-group variability, and its annotations point only to supporting cases - but all 108 data points are still on screen for a careful reader to inspect. The con chart's dumbbell pairs are technically accurate but selected for maximum drama, and its strip plot uses two groups instead of three specifically to flatten the gradient - yet it still displays every country. Both charts are a little deceptive in their own ways. What I struggled with most was that there really is no clear cutoff between framing something persuasively and actually misleading someone. In order to be an ethical designer, one should pay attention to which choices they are making and why, and try not to build a chart that shuts down the reader's ability to push back on what it is showing them.
+			</p>
+    </section>
+	</main>
+</body>
+</html>
